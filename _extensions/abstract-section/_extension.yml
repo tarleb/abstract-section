@@ -1,6 +1,6 @@
 title: Abstract Section
 author: Albert Krewinkel
-version: 1.0.0
+version: 1.0.1
 contributes:
   - filters:
       - abstract-section.lua
