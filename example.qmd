@@ -1,0 +1,18 @@
+---
+title: Abstract Section Example
+author:
+  - Jane Doe
+date: 2022-08-01
+format:
+  pdf
+---
+
+# Abstract
+
+This is a summary and description of this article. The text in
+this section is treated as if it was placed in the metadata under
+the key `abstract`.
+
+# Introduction
+
+This is where the main article starts.
