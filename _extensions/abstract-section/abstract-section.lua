@@ -7,11 +7,11 @@ License:   MIT – see LICENSE file for details
 
 return {{
     Pandoc = function (doc)
-      local abstract = {}
+      local abstract = pandoc.Blocks{}
 
       doc.blocks = doc.blocks:walk {
         Blocks = function (blocks)
-          local body_blocks = {}
+          local body_blocks = pandoc.Blocks{}
           local looking_at_abstract = false
 
           for _, block in ipairs(blocks) do
@@ -20,16 +20,16 @@ return {{
                 looking_at_abstract = true
               else
                 looking_at_abstract = false
-                body_blocks[#body_blocks + 1] = block
+                body_blocks:insert(block)
               end
             elseif looking_at_abstract then
               if block.t == 'HorizontalRule' then
                 looking_at_abstract = false
               else
-                abstract[#abstract + 1] = block
+                abstract:insert(block)
               end
             else
-              body_blocks[#body_blocks + 1] = block
+              body_blocks:insert(block)
             end
           end
 
